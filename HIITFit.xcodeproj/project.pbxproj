@@ -11,6 +11,12 @@
 		73616BD0270D01BD00F77659 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73616BCF270D01BD00F77659 /* ContentView.swift */; };
 		73616BD2270D01BF00F77659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73616BD1270D01BF00F77659 /* Assets.xcassets */; };
 		73616BD5270D01BF00F77659 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73616BD4270D01BF00F77659 /* Preview Assets.xcassets */; };
+		73616BE2270D0EEE00F77659 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73616BE1270D0EEE00F77659 /* WelcomeView.swift */; };
+		73616BE4270D0F0E00F77659 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73616BE3270D0F0E00F77659 /* ExerciseView.swift */; };
+		73616BEA270D19BB00F77659 /* y2mate.com - Backless Dress Workout  Best Back Workout Routine_v240P.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73616BE6270D19BA00F77659 /* y2mate.com - Backless Dress Workout  Best Back Workout Routine_v240P.mp4 */; };
+		73616BEB270D19BB00F77659 /* y2mate.com - 30Second TotalBody Workout_v240P.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73616BE7270D19BB00F77659 /* y2mate.com - 30Second TotalBody Workout_v240P.mp4 */; };
+		73616BEC270D19BB00F77659 /* y2mate.com - 1 Minute Workout Music With 60 Seconds Countdown_360p.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73616BE8270D19BB00F77659 /* y2mate.com - 1 Minute Workout Music With 60 Seconds Countdown_360p.mp4 */; };
+		73616BED270D19BB00F77659 /* y2mate.com - VShaped Torso  Best Torso Sculpting Routine_v240P.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73616BE9270D19BB00F77659 /* y2mate.com - VShaped Torso  Best Torso Sculpting Routine_v240P.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		73616BCF270D01BD00F77659 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		73616BD1270D01BF00F77659 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73616BD4270D01BF00F77659 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		73616BE1270D0EEE00F77659 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		73616BE3270D0F0E00F77659 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		73616BE6270D19BA00F77659 /* y2mate.com - Backless Dress Workout  Best Back Workout Routine_v240P.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "y2mate.com - Backless Dress Workout  Best Back Workout Routine_v240P.mp4"; sourceTree = "<group>"; };
+		73616BE7270D19BB00F77659 /* y2mate.com - 30Second TotalBody Workout_v240P.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "y2mate.com - 30Second TotalBody Workout_v240P.mp4"; sourceTree = "<group>"; };
+		73616BE8270D19BB00F77659 /* y2mate.com - 1 Minute Workout Music With 60 Seconds Countdown_360p.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "y2mate.com - 1 Minute Workout Music With 60 Seconds Countdown_360p.mp4"; sourceTree = "<group>"; };
+		73616BE9270D19BB00F77659 /* y2mate.com - VShaped Torso  Best Torso Sculpting Routine_v240P.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "y2mate.com - VShaped Torso  Best Torso Sculpting Routine_v240P.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				73616BCD270D01BD00F77659 /* HIITFitApp.swift */,
-				73616BCF270D01BD00F77659 /* ContentView.swift */,
+				73616BEF270D1B1400F77659 /* Videos */,
+				73616BE5270D0F6C00F77659 /* Views */,
 				73616BD1270D01BF00F77659 /* Assets.xcassets */,
 				73616BD3270D01BF00F77659 /* Preview Content */,
 			);
@@ -65,6 +78,27 @@
 				73616BD4270D01BF00F77659 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		73616BE5270D0F6C00F77659 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				73616BCF270D01BD00F77659 /* ContentView.swift */,
+				73616BE3270D0F0E00F77659 /* ExerciseView.swift */,
+				73616BE1270D0EEE00F77659 /* WelcomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		73616BEF270D1B1400F77659 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				73616BE8270D19BB00F77659 /* y2mate.com - 1 Minute Workout Music With 60 Seconds Countdown_360p.mp4 */,
+				73616BE7270D19BB00F77659 /* y2mate.com - 30Second TotalBody Workout_v240P.mp4 */,
+				73616BE6270D19BA00F77659 /* y2mate.com - Backless Dress Workout  Best Back Workout Routine_v240P.mp4 */,
+				73616BE9270D19BB00F77659 /* y2mate.com - VShaped Torso  Best Torso Sculpting Routine_v240P.mp4 */,
+			);
+			path = Videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +159,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73616BED270D19BB00F77659 /* y2mate.com - VShaped Torso  Best Torso Sculpting Routine_v240P.mp4 in Resources */,
 				73616BD5270D01BF00F77659 /* Preview Assets.xcassets in Resources */,
 				73616BD2270D01BF00F77659 /* Assets.xcassets in Resources */,
+				73616BEA270D19BB00F77659 /* y2mate.com - Backless Dress Workout  Best Back Workout Routine_v240P.mp4 in Resources */,
+				73616BEB270D19BB00F77659 /* y2mate.com - 30Second TotalBody Workout_v240P.mp4 in Resources */,
+				73616BEC270D19BB00F77659 /* y2mate.com - 1 Minute Workout Music With 60 Seconds Countdown_360p.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +175,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73616BE4270D0F0E00F77659 /* ExerciseView.swift in Sources */,
 				73616BD0270D01BD00F77659 /* ContentView.swift in Sources */,
+				73616BE2270D0EEE00F77659 /* WelcomeView.swift in Sources */,
 				73616BCE270D01BD00F77659 /* HIITFitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

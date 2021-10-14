@@ -17,6 +17,7 @@
 		73616BEB270D19BB00F77659 /* y2mate.com - 30Second TotalBody Workout_v240P.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73616BE7270D19BB00F77659 /* y2mate.com - 30Second TotalBody Workout_v240P.mp4 */; };
 		73616BEC270D19BB00F77659 /* y2mate.com - 1 Minute Workout Music With 60 Seconds Countdown_360p.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73616BE8270D19BB00F77659 /* y2mate.com - 1 Minute Workout Music With 60 Seconds Countdown_360p.mp4 */; };
 		73616BED270D19BB00F77659 /* y2mate.com - VShaped Torso  Best Torso Sculpting Routine_v240P.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73616BE9270D19BB00F77659 /* y2mate.com - VShaped Torso  Best Torso Sculpting Routine_v240P.mp4 */; };
+		73642649271859DC00219FB8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73642648271859DC00219FB8 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		73616BE7270D19BB00F77659 /* y2mate.com - 30Second TotalBody Workout_v240P.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "y2mate.com - 30Second TotalBody Workout_v240P.mp4"; sourceTree = "<group>"; };
 		73616BE8270D19BB00F77659 /* y2mate.com - 1 Minute Workout Music With 60 Seconds Countdown_360p.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "y2mate.com - 1 Minute Workout Music With 60 Seconds Countdown_360p.mp4"; sourceTree = "<group>"; };
 		73616BE9270D19BB00F77659 /* y2mate.com - VShaped Torso  Best Torso Sculpting Routine_v240P.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "y2mate.com - VShaped Torso  Best Torso Sculpting Routine_v240P.mp4"; sourceTree = "<group>"; };
+		73642648271859DC00219FB8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				73616BCF270D01BD00F77659 /* ContentView.swift */,
 				73616BE3270D0F0E00F77659 /* ExerciseView.swift */,
+				73642648271859DC00219FB8 /* HeaderView.swift */,
 				73616BE1270D0EEE00F77659 /* WelcomeView.swift */,
 			);
 			path = Views;
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73642649271859DC00219FB8 /* HeaderView.swift in Sources */,
 				73616BE4270D0F0E00F77659 /* ExerciseView.swift in Sources */,
 				73616BD0270D01BD00F77659 /* ContentView.swift in Sources */,
 				73616BE2270D0EEE00F77659 /* WelcomeView.swift in Sources */,

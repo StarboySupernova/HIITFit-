@@ -11,27 +11,17 @@ struct ExerciseView: View {
     let videoNames = ["squat", "step-up", "burpee", "sun-salute", ]
     let exerciseNames = ["Squat", "Step Up", "Burpee", "Sun Salute"]
     let index: Int
+    //index is local to exercise view, so it cannot be used in HeaderView extracted subview that was subsequently ported to headerView.swift
     
     var body: some View {
         VStack {
-            VStack {
-                Text(exerciseNames[index])
-                    .font(.largeTitle)
-                HStack {
-                    Image(systemName: "1.circle")
-                    Image(systemName: "2.circle")
-                    Image(systemName: "3.circle")
-                    Image(systemName: "4.circle")
-                }
-                .font(.title2)
-                
-            }
+            HeaderView(exerciseName: exerciseNames[index])
             Text("Video player")
             Text("Timer")
             Text("Start/Done button")
             Text("Rating")
             Text("History button")
-            Image(systemName: "1.circle")
+            
         }
     }
 }
@@ -41,3 +31,4 @@ struct ExerciseView_Previews: PreviewProvider {
         ExerciseView(index: 0)
     }
 }
+

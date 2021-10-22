@@ -9,11 +9,18 @@ import SwiftUI
 
 struct HistoryView: View {
     
-    let today = Date()
-    let yesterday = Date().addingTimeInterval(-86400)
+    let history = HistoryStore()
+    /*
+     In HistoryView.swift, delete the Date properties and the exercise arrays, then add this property: let history = HistoryStore()
+     HistoryStore now encapsulates all the information in the stored properties today, yesterday and the exercises arrays.
+     */
     
-    let exercises1 = ["Squat", "Step-up", "Burpee", "Sun-salute"]
-    let exercises2 = ["Squat", "Step-up", "Burpee"]
+    //Deleted code
+//    let today = Date()
+//    let yesterday = Date().addingTimeInterval(-86400)
+//
+//    let exercises1 = ["Squat", "Step-up", "Burpee", "Sun-salute"]
+//    let exercises2 = ["Squat", "Step-up", "Burpee"]
     
     var body: some View {
         ZStack (alignment: .topTrailing) {
@@ -31,20 +38,41 @@ struct HistoryView: View {
                     .padding()
                 
                 Form {
-                Section(
-                    header: Text(today.formatted(as: "MMM d"))
-                            .font(.headline)) {
-                                ForEach(exercises1, id: \.self){ exercise in
-                                    Text(exercise)
-                                }
+                    /* initializer used here
+                     init(Data, content: (Data.Element) -> Content)
+                     Creates an instance that uniquely identifies and creates views across updates based on the identity of the underlying data.
+                     Available when Data conforms to RandomAccessCollection (exerciseDays array), ID is Data.Element.ID, Content conforms to View, and Data.Element conforms to Identifiable (ExerciseDay struct conforms to ID here and is the element to the exerciseDays array)
+                     
+                     */
+                    ForEach(history.exerciseDays) { day in
+                        Section(header:Text(day.date.formatted(as: "MMM d"))
+                                    .font(.headline)) {
+                            ForEach(day.exercises, id: \.self){ exercise in
+                                Text(exercise)
+                            }
+                        }
+                    }
                 }
-                Section(
-                    header: Text(yesterday.formatted(as: "MMM d"))
-                            .font(.headline)) {
-                                ForEach(exercises2, id: \.self){ exercise in
-                                    Text(exercise)
-                                }
-                } }
+                
+                
+                
+                //Deleted code
+//                Form {
+//                Section(
+//                    header: Text(today.formatted(as: "MMM d"))
+//                            .font(.headline)) {
+//                                ForEach(exercises1, id: \.self){ exercise in
+//                                    Text(exercise)
+//                                }
+//                }
+//                Section(
+//                    header: Text(yesterday.formatted(as: "MMM d"))
+//                            .font(.headline)) {
+//                                ForEach(exercises2, id: \.self){ exercise in
+//                                    Text(exercise)
+//                                }
+//                            }
+//                }
                 
             }
         }

@@ -2,26 +2,48 @@
 //  ExerciseView.swift
 //  HIITFit
 //
-//  Created by user207077 on 10/5/21.
+//  Created by Simbarashe Dombodzvuku on 10/5/21.
 //
 
 import SwiftUI
+import AVKit
 
 struct ExerciseView: View {
     let videoNames = ["squat", "step-up", "burpee", "sun-salute", ]
     let exerciseNames = ["Squat", "Step Up", "Burpee", "Sun Salute"]
     let index: Int
     //index is local to exercise view, so it cannot be used in HeaderView extracted subview that was subsequently ported to headerView.swift
+    let interval: TimeInterval = 30
     
     var body: some View {
-        VStack {
-            HeaderView(exerciseName: exerciseNames[index])
-            Text("Video player")
-            Text("Timer")
-            Text("Start/Done button")
-            Text("Rating")
-            Text("History button")
-            
+        GeometryReader { geometry in
+            VStack {
+                HeaderView(titleText: exerciseNames[index])
+                    .padding(.bottom)
+                if let url = Bundle.main.url(forResource: videoNames[index], withExtension: "mp4") {
+                    VideoPlayer(player: AVPlayer(url: url))
+                        .frame(height: geometry.size.height * 0.45)
+                } else {
+                    Text("Couldn't find \(videoNames[index])")
+                        .foregroundColor(.red)
+                }
+                
+                Text(Date().addingTimeInterval(interval), style: .timer)
+                    .font(.system(size: 90))
+                //this displays the discrepancy between the date value and the current time. Since we set date to be 30s in the future (Date.addingTimeInterval) it will count down as it approaches the current time. When the timer hits 0 it will start counting up again as the difference between that date and the current time grows again. This is just for the prototype, we'll use a real timer later
+                
+                Button("Start/Done") {}
+                    .font(.title3)
+                    .padding()
+                
+                RatingsView()
+                    .padding()
+                
+                Spacer()
+                Button("History button"){}
+                    .padding(.bottom)
+                
+            }
         }
     }
 }

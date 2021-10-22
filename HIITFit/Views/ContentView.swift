@@ -14,7 +14,7 @@ struct ContentView: View {
             ForEach(0..<4){index in
                 ExerciseView(index: index)
             }
-            Text("Exercise 2")
+            
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         //Now, you’ll never show the index dots

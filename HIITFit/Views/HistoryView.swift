@@ -33,7 +33,7 @@ struct HistoryView: View {
             .padding(.trailing)
             
             VStack {
-                Text("History")
+                Text(NSLocalizedString("History", comment: "view user activity"))
                     .font(.title)
                     .padding()
                 
@@ -45,7 +45,7 @@ struct HistoryView: View {
                      
                      */
                     ForEach(history.exerciseDays) { day in
-                        Section(header:Text(day.date.formatted(as: "MMM d"))
+                        Section(header:Text(day.date.formatted(as: "MMMM d"))
                                     .font(.headline)) {
                             ForEach(day.exercises, id: \.self){ exercise in
                                 Text(exercise)

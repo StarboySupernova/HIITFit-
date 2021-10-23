@@ -33,7 +33,7 @@ struct ExerciseView: View {
                     .font(.system(size: 90))
                 //this displays the discrepancy between the date value and the current time. Since we set date to be 30s in the future (Date.addingTimeInterval) it will count down as it approaches the current time. When the timer hits 0 it will start counting up again as the difference between that date and the current time grows again. This is just for the prototype, we'll use a real timer later
                 
-                Button("Start/Done") {}
+                Button(NSLocalizedString( "Start/Done", comment: "begin exercise / mark as finished")) {}
                     .font(.title3)
                     .padding()
                 
@@ -41,7 +41,7 @@ struct ExerciseView: View {
                     .padding()
                 
                 Spacer()
-                Button("History button"){}
+                Button(NSLocalizedString("History", comment: "view user activity")){}
                     .padding(.bottom)
                 
             }

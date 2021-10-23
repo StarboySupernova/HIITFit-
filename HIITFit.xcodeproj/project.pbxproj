@@ -18,12 +18,13 @@
 		73616BE2270D0EEE00F77659 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73616BE1270D0EEE00F77659 /* WelcomeView.swift */; };
 		73616BE4270D0F0E00F77659 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73616BE3270D0F0E00F77659 /* ExerciseView.swift */; };
 		73642649271859DC00219FB8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73642648271859DC00219FB8 /* HeaderView.swift */; };
-		7364264E271863A300219FB8 /* squat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7364264A271863A300219FB8 /* squat.mp4 */; };
 		7364264F271863A300219FB8 /* step-up.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7364264B271863A300219FB8 /* step-up.mp4 */; };
 		73642650271863A300219FB8 /* sun-salute.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7364264C271863A300219FB8 /* sun-salute.mp4 */; };
 		73642651271863A300219FB8 /* burpee.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7364264D271863A300219FB8 /* burpee.mp4 */; };
 		73642653271876BC00219FB8 /* RatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73642652271876BC00219FB8 /* RatingsView.swift */; };
 		736ED1A8271E387000D0F9EB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736ED1A7271E387000D0F9EB /* DateExtension.swift */; };
+		73BC49242724437C008620B7 /* squat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73BC49262724437C008620B7 /* squat.mp4 */; };
+		73E637152723693E0097AE04 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73E637172723693E0097AE04 /* Localizable.strings */; };
 		73EAA9F92722264500510E12 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA9F82722264500510E12 /* SuccessView.swift */; };
 		73EAA9FB2722448E00510E12 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA9FA2722448E00510E12 /* Exercise.swift */; };
 /* End PBXBuildFile section */
@@ -41,12 +42,14 @@
 		73616BE1270D0EEE00F77659 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		73616BE3270D0F0E00F77659 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		73642648271859DC00219FB8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		7364264A271863A300219FB8 /* squat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = squat.mp4; sourceTree = "<group>"; };
 		7364264B271863A300219FB8 /* step-up.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "step-up.mp4"; sourceTree = "<group>"; };
 		7364264C271863A300219FB8 /* sun-salute.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sun-salute.mp4"; sourceTree = "<group>"; };
 		7364264D271863A300219FB8 /* burpee.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = burpee.mp4; sourceTree = "<group>"; };
 		73642652271876BC00219FB8 /* RatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsView.swift; sourceTree = "<group>"; };
 		736ED1A7271E387000D0F9EB /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		73BC492327244016008620B7 /* sn-ZW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sn-ZW"; path = "sn-ZW.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		73BC49252724437C008620B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/squat.mp4; sourceTree = "<group>"; };
+		73E637162723693E0097AE04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		73EAA9F82722264500510E12 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		73EAA9FA2722448E00510E12 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				73616BCD270D01BD00F77659 /* HIITFitApp.swift */,
+				73E637172723693E0097AE04 /* Localizable.strings */,
 				73616BEF270D1B1400F77659 /* Videos */,
 				73616BE5270D0F6C00F77659 /* Views */,
 				736ED1A7271E387000D0F9EB /* DateExtension.swift */,
@@ -128,9 +132,9 @@
 		73616BEF270D1B1400F77659 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				7364264D271863A300219FB8 /* burpee.mp4 */,
-				7364264A271863A300219FB8 /* squat.mp4 */,
+				73BC49262724437C008620B7 /* squat.mp4 */,
 				7364264B271863A300219FB8 /* step-up.mp4 */,
+				7364264D271863A300219FB8 /* burpee.mp4 */,
 				7364264C271863A300219FB8 /* sun-salute.mp4 */,
 			);
 			path = Videos;
@@ -178,6 +182,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"sn-ZW",
 			);
 			mainGroup = 73616BC1270D01BD00F77659;
 			productRefGroup = 73616BCB270D01BD00F77659 /* Products */;
@@ -197,7 +202,8 @@
 				7364264F271863A300219FB8 /* step-up.mp4 in Resources */,
 				73616BD5270D01BF00F77659 /* Preview Assets.xcassets in Resources */,
 				73642651271863A300219FB8 /* burpee.mp4 in Resources */,
-				7364264E271863A300219FB8 /* squat.mp4 in Resources */,
+				73E637152723693E0097AE04 /* Localizable.strings in Resources */,
+				73BC49242724437C008620B7 /* squat.mp4 in Resources */,
 				73642650271863A300219FB8 /* sun-salute.mp4 in Resources */,
 				73616BD2270D01BF00F77659 /* Assets.xcassets in Resources */,
 			);
@@ -228,11 +234,32 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		73BC49262724437C008620B7 /* squat.mp4 */ = {
+			isa = PBXVariantGroup;
+			children = (
+				73BC49252724437C008620B7 /* Base */,
+			);
+			name = squat.mp4;
+			sourceTree = "<group>";
+		};
+		73E637172723693E0097AE04 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				73E637162723693E0097AE04 /* en */,
+				73BC492327244016008620B7 /* sn-ZW */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		73616BD6270D01BF00F77659 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -294,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

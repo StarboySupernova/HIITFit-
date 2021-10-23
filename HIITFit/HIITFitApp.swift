@@ -2,7 +2,7 @@
 //  HIITFitApp.swift
 //  HIITFit
 //
-//  Created by user207077 on 10/5/21.
+//  Created by Simbarashe Dombodzvuku on 10/5/21.
 //
 
 import SwiftUI

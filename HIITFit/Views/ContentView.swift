@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var selectedTab = 9
+    
     var body: some View {
-        TabView {
+        
+        TabView(selection: $selectedTab) {
+            WelcomeView(selectedTab: $selectedTab)
+                .tag(9)
+            ForEach(0 ..< Exercise.exercises.count){ index in
+                ExerciseView(selectedTab: $selectedTab, index: index)
+                    .tag(index)
+            }
+        }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        
+        //Replaced Code
+        /* TabView {
             WelcomeView()
             ForEach(0..<Exercise.exercises.count){index in
                 ExerciseView(index: index)
@@ -17,7 +32,8 @@ struct ContentView: View {
             
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-        //Now, you’ll never show the index dots
+        //Now, you’ll never show the index dots */
+        
             
     }
 }

@@ -10,11 +10,15 @@ import SwiftUI
 struct WelcomeView: View {
     
     @Binding var selectedTab : Int
+    
     var body: some View {
         ZStack {
             VStack {
-                HeaderView(titleText:
-                            NSLocalizedString("Welcome", comment: "greeting"))
+                HeaderView(selectedTab:
+                            $selectedTab,
+                           titleText:
+                            NSLocalizedString("Welcome", comment: "greeting")
+                )
                 Spacer()
                 Button(
                     NSLocalizedString("History", comment: "view user activity")){}

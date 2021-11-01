@@ -14,6 +14,7 @@ struct ExerciseView: View {
     let exerciseNames = ["Squat", "Step Up", "Burpee", "Sun Salute"]
     
     @Binding var selectedTab : Int
+    @State private var rating = 0
     
     let index: Int
     //index is local to exercise view, so it cannot be used in HeaderView extracted subview that was subsequently ported to headerView.swift
@@ -27,7 +28,11 @@ struct ExerciseView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                HeaderView(titleText: Exercise.exercises[index].exerciseName)
+                HeaderView(selectedTab:
+                            $selectedTab,
+                           titleText:
+                            Exercise.exercises[index].exerciseName
+                )
                     .padding(.bottom)
                 if let url =
                     Bundle.main.url(forResource: Exercise.exercises[index].videoName, withExtension: "mp4") {
@@ -52,7 +57,7 @@ struct ExerciseView: View {
                     .font(.title3)
                     .padding()*/
                 
-                RatingsView()
+                RatingsView(rating: $rating)
                     .padding()
                 
                 Spacer()

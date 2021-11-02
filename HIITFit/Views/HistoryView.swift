@@ -9,7 +9,9 @@ import SwiftUI
 
 struct HistoryView: View {
     
-    let history = HistoryStore()
+    @EnvironmentObject var history: HistoryStore
+    //You don’t want to create another HistoryStore object here. Instead, HistoryView can access history directly without needing it passed as a parameter.
+    //deleted code let history = HistoryStore()
     @Binding var showHistory: Bool
     /*
      In HistoryView.swift, delete the Date properties and the exercise arrays, then add this property: let history = HistoryStore()
@@ -83,5 +85,7 @@ struct HistoryView: View {
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
         HistoryView(showHistory: .constant(true))
+            .environmentObject(HistoryStore())
+        //You must tell previews about this EnvironmentObject or it will crash with no useful information on what went wrong.
     }
 }

@@ -23,6 +23,8 @@ struct ExerciseView: View {
     @State private var showTimer = false
     @State private var timerDone = false
     
+    @EnvironmentObject var history: HistoryStore
+    
     let index: Int
     //index is local to exercise view, so it cannot be used in HeaderView extracted subview that was subsequently ported to headerView.swift
     
@@ -56,6 +58,7 @@ struct ExerciseView: View {
                         showTimer.toggle()
                     }
                     Button(NSLocalizedString("Done", comment: "mark as finished")){
+                        history.addDoneExercise(Exercise.exercises[index].exerciseName)
                         timerDone = false
                         showTimer.toggle()
                         
@@ -64,7 +67,7 @@ struct ExerciseView: View {
                         } else {
                             selectedTab += 1
                         }
-                            /*selectedTab = lastExercise ? 9 : selectedTab + 1*/
+                            //selectedTab = lastExercise ? 9 : selectedTab + 1
                             
                     }
                     .disabled(!timerDone)
@@ -74,9 +77,7 @@ struct ExerciseView: View {
                 }
                 .font(.title3)
                 .padding()
-                /*Button(NSLocalizedString( "Start/Done", comment: "begin exercise / mark as finished")) {}
-                    .font(.title3)
-                    .padding()*/
+                
                 
                 if showTimer {
                     TimerView(timerDone: $timerDone)
@@ -107,7 +108,8 @@ struct ExerciseView: View {
 
 struct ExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseView(selectedTab: .constant(1), index: 0)
+        ExerciseView(selectedTab: .constant(0), index: 0)
+            .environmentObject(HistoryStore())
     }
 }
 

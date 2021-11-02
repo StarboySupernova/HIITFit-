@@ -10,6 +10,7 @@ import SwiftUI
 struct HistoryView: View {
     
     let history = HistoryStore()
+    @Binding var showHistory: Bool
     /*
      In HistoryView.swift, delete the Date properties and the exercise arrays, then add this property: let history = HistoryStore()
      HistoryStore now encapsulates all the information in the stored properties today, yesterday and the exercises arrays.
@@ -26,7 +27,7 @@ struct HistoryView: View {
         ZStack (alignment: .topTrailing) {
             //Other views in the ZStack have their own alignment values, so the ZStack alignment value doesn’t affect them
             //This alignment only applies to the button
-            Button(action: {}) {
+            Button(action: {showHistory.toggle()}) {
                 Image(systemName: "xmark.circle")
             }
             .font(.title)
@@ -81,6 +82,6 @@ struct HistoryView: View {
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView()
+        HistoryView(showHistory: .constant(true))
     }
 }

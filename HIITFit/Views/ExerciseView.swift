@@ -15,6 +15,8 @@ struct ExerciseView: View {
     
     @Binding var selectedTab : Int
     @State private var rating = 0
+    @State private var showHistory = false
+    @State private var showSuccess = false
     
     let index: Int
     //index is local to exercise view, so it cannot be used in HeaderView extracted subview that was subsequently ported to headerView.swift
@@ -48,8 +50,17 @@ struct ExerciseView: View {
                 //this displays the discrepancy between the date value and the current time. Since we set date to be 30s in the future (Date.addingTimeInterval) it will count down as it approaches the current time. When the timer hits 0 it will start counting up again as the difference between that date and the current time grows again. This is just for the prototype, we'll use a real timer later
                 HStack(spacing: 150){
                     Button(NSLocalizedString ("Start", comment: "begin exercise")) {}
-                    Button(NSLocalizedString("Done", comment: "mark as finished"))
-                        {selectedTab = lastExercise ? 9 : selectedTab + 1}
+                    Button(NSLocalizedString("Done", comment: "mark as finished")){ if lastExercise {
+                            showSuccess.toggle()
+                        } else {
+                            selectedTab += 1
+                        }
+                            /*selectedTab = lastExercise ? 9 : selectedTab + 1*/
+                            
+                    }
+                    .sheet(isPresented: $showSuccess){
+                        SuccessView(selectedTab: $selectedTab)
+                    }
                 }
                 .font(.title3)
                 .padding()
@@ -61,7 +72,12 @@ struct ExerciseView: View {
                     .padding()
                 
                 Spacer()
-                Button(NSLocalizedString("History", comment: "view user activity")){}
+                Button(NSLocalizedString("History", comment: "view user activity")){
+                    showHistory.toggle()
+                }
+                .sheet(isPresented: $showHistory){
+                    HistoryView(showHistory: $showHistory)
+                }
                     .padding(.bottom)
                 
             }

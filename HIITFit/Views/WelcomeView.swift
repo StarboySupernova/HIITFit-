@@ -10,6 +10,7 @@ import SwiftUI
 struct WelcomeView: View {
     
     @Binding var selectedTab : Int
+    @State private var showHistory = false
     
     var body: some View {
         ZStack {
@@ -21,7 +22,12 @@ struct WelcomeView: View {
                 )
                 Spacer()
                 Button(
-                    NSLocalizedString("History", comment: "view user activity")){}
+                    NSLocalizedString("History", comment: "view user activity")){
+                        showHistory.toggle()
+                    }
+                    .sheet(isPresented: $showHistory){
+                        HistoryView(showHistory: $showHistory)
+                    }
                 .padding(.bottom)
             }
             VStack {
@@ -36,6 +42,7 @@ struct WelcomeView: View {
                     Image("step-up")
                         .resizedToFill(width: 240, height: 240)
                         .clipShape(Circle())
+                    //encapsulated in an extension
 //                        .resizable()
 //                        .aspectRatio(contentMode: .fill)
 //                        .frame(width: 240.0, height: 240.0)

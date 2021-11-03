@@ -15,7 +15,9 @@ struct ExerciseView: View {
     
     @Binding var selectedTab : Int
     
-    @State private var rating = 0
+    @AppStorage("rating") private var rating = 0
+    //You set up a ratings view that allows the user to rate the exercise difficulty from one to five. You’ll save this rating to UserDefaults so that your ratings don’t disappear when you close the app. We will use @AppStorage for that and remove the @State variable
+    // @State private var rating = 0
     
     @State private var showHistory = false
     @State private var showSuccess = false

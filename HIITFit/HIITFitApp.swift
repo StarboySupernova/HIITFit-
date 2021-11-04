@@ -20,6 +20,7 @@ struct HIITFitApp: App {
              ➤ Build and run in Simulator. The debug console will print out an array of URLs for your Documents directory path in the specified domain. The domain here, userDomainMask, is the user’s home directory.
              
              */
+            // on a related note, Erasing all contents and settings creates a completely new app sandbox, so open the path printed in the console if you do that to access the new info.plist
         }
     }
 }

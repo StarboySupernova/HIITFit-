@@ -9,6 +9,15 @@ import SwiftUI
 
 struct RatingsView: View {
     
+    init(exerciseIndex: Int){
+        self.exerciseIndex = exerciseIndex
+        let desiredLength = Exercise.exercises.count
+        if ratings.count < desiredLength {
+            ratings = ratings.padding(toLength: desiredLength, withPad: "0", startingAt: 0)
+            //init included to prevent out of bounds errors.Ratings must have as many characters as you have exercises. If the ratings is too short then you pad out tht string with zeros
+        }
+    }
+    
     //deleted code
     // explanation in ExerciseView
     // @Binding var rating: Int

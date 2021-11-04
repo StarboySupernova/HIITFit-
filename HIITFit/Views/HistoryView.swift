@@ -52,7 +52,7 @@ struct HistoryView: View {
                                     .font(.headline)) {
                             ForEach(day.exercises, id: \.self){ exercise in
                                 Text(exercise)
-                            }
+                            } 
                         }
                     }
                 }

@@ -15,8 +15,14 @@ struct ExerciseView: View {
     
     @Binding var selectedTab : Int
     
-    @AppStorage("rating") private var rating = 0
+    // @AppStorage("rating") private var rating = 0
+    // Now that you’re going to store ratings, RatingView is a better source of truth than ExerciseView. Instead of storing ratings in ExerciseView, you’ll pass the current exercise index to RatingView, which can then read and write the rating
+    //So that's why we had to delete @AppStorage in favour of using the string index
+    // * * * * * * * * * * * * * * * * * * * * * * *
+    
     //You set up a ratings view that allows the user to rate the exercise difficulty from one to five. You’ll save this rating to UserDefaults so that your ratings don’t disappear when you close the app. We will use @AppStorage for that and remove the @State variable
+    /*when we did the above, passing $rating to the ratings view init in this folder still worked, which leads us to surmise that @AppStorage exposes a binding somehow */
+    //deleted state variable
     // @State private var rating = 0
     
     @State private var showHistory = false
@@ -91,7 +97,7 @@ struct ExerciseView: View {
                 //this displays the discrepancy between the date value and the current time. Since we set date to be 30s in the future (Date.addingTimeInterval) it will count down as it approaches the current time. When the timer hits 0 it will start counting up again as the difference between that date and the current time grows again. This is just for the prototype, we'll use a real timer later
                 Spacer()
                 
-                RatingsView(rating: $rating)
+                RatingsView(exerciseIndex: index)
                     .padding()
                 
                 

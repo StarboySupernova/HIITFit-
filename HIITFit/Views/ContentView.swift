@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var selectedTab = 9
+    @SceneStorage("selectedTab") private var selectedTab = 9
+    //Added an @SceneStorage property to ensure the app continues from the page a user was on in the event of exiting the app. It exposes a Binding as well through its projected value
+    //@State private var selectedTab = 9
     
     var body: some View {
         

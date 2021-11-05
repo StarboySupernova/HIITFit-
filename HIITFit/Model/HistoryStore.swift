@@ -17,18 +17,22 @@ class HistoryStore: ObservableObject {
     @Published var exerciseDays : [ExerciseDay] = []
     init(){
         #if DEBUG
-        createDevData()
+        //Currently, on initializing HistoryStore, you create a fake exerciseDays array (createDevData()). This was useful for testing, but now that you’re going to save real history, you no longer need to load the data
+        //createDevData()
         #endif
     }
     
     func addDoneExercise(_ exerciseName: String){
+        //this code does not cope with the possibility of the array being nil, so we need to alter it to prevent runtime errors
         let today = Date()
-        if today.isSameDay(as: exerciseDays[0].date){
+        //if today.isSameDay(as: exerciseDays[0].date){
+        if let firstDate = exerciseDays.first?.date,today.isSameDay(as: exerciseDays[0].date) {
             print("Adding \(exerciseName)")
             exerciseDays[0].exercises.append(exerciseName)
         } else {
             exerciseDays.insert(ExerciseDay(date: today, exercises: [exerciseName]), at: 0)
         }
+        print("History", exerciseDays)
     }
 }
 

@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct HIITFitApp: App {
+    
+    @StateObject private var historyStore: HistoryStore
+    @State private var showAlert = false
+    
     init() {
         let historyStore: HistoryStore
         do {
@@ -16,6 +20,7 @@ struct HIITFitApp: App {
         } catch {
             print("Could not load history data")
             historyStore = HistoryStore()
+            showAlert = true
         }
         _historyStore = StateObject(wrappedValue: historyStore)
         
@@ -23,7 +28,7 @@ struct HIITFitApp: App {
         //self.historyStore = historyStore
     }
     
-    @StateObject private var historyStore: HistoryStore
+    
     
     var body: some Scene {
         WindowGroup {
@@ -31,6 +36,15 @@ struct HIITFitApp: App {
                 .environmentObject(historyStore) //Here you use the state object instead of creating HistoryStore, when setting up the environment object
                 .onAppear {
                     print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+                }
+                .alert(isPresented: $showAlert){
+                    Alert(title: Text("History"),
+                          message: Text(
+                                """
+                                Unfortunately, we can't load your past history.
+                                Email support:
+                                  support@supernovaonline.com
+                                """))
                 }
             /*
              Here you use the shared file manager object to list the URLs for the specified directory. There are many significant directories, which you can find in the documentation at https://apple.co/3pTE3U5. Remember that your app is sandboxed, and each app will have its own app directories.

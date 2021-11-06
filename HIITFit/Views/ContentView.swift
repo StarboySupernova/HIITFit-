@@ -24,6 +24,8 @@ struct ContentView: View {
             }
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                
+    }
         
         //Replaced Code
         /* TabView {
@@ -35,9 +37,6 @@ struct ContentView: View {
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         //Now, you’ll never show the index dots */
-        
-            
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {

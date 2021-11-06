@@ -15,14 +15,30 @@ struct  ExerciseDay : Identifiable {
 
 class HistoryStore: ObservableObject {
     @Published var exerciseDays : [ExerciseDay] = []
-    init(){
+    
+    enum FileError: Error {
+        case loadFailure
+        case urlFailure
+        case saveFailure
+    }
+    
+    init(withChecking: Bool) throws {
         #if DEBUG
         //Currently, on initializing HistoryStore, you create a fake exerciseDays array (createDevData()). This was useful for testing, but now that you’re going to save real history, you no longer need to load the data
         //createDevData()
         #endif
         //was for debug purposes and learning to uses breakpoints
         //print("Initializing HistoryStore")
+        
+        do {
+            try load()
+        } catch {
+            throw error
+            //This will pass back the error to the object that initializes HistoryStore
+        }
     }
+    
+    init(){}
     
     func addDoneExercise(_ exerciseName: String){
         //this code does not cope with the possibility of the array being nil, so we need to alter it to prevent runtime errors
@@ -37,6 +53,11 @@ class HistoryStore: ObservableObject {
         //was for debug purposes and learning to use breakpoints
         //print("History", exerciseDays)
     }
+    
+    func load () throws {
+        throw FileError.loadFailure
+    }
+    
 }
 
 

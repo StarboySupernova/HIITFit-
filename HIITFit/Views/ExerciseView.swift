@@ -118,6 +118,7 @@ struct ExerciseView_Previews: PreviewProvider {
     static var previews: some View {
         ExerciseView(selectedTab: .constant(0), index: 0)
             .environmentObject(HistoryStore())
+        //you have to explicitly pass an environmentObject to the previews for it to work
     }
 }
 

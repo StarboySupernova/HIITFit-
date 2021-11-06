@@ -20,6 +20,8 @@ class HistoryStore: ObservableObject {
         //Currently, on initializing HistoryStore, you create a fake exerciseDays array (createDevData()). This was useful for testing, but now that you’re going to save real history, you no longer need to load the data
         //createDevData()
         #endif
+        //was for debug purposes and learning to uses breakpoints
+        //print("Initializing HistoryStore")
     }
     
     func addDoneExercise(_ exerciseName: String){
@@ -32,7 +34,8 @@ class HistoryStore: ObservableObject {
         } else {
             exerciseDays.insert(ExerciseDay(date: today, exercises: [exerciseName]), at: 0)
         }
-        print("History", exerciseDays)
+        //was for debug purposes and learning to use breakpoints
+        //print("History", exerciseDays)
     }
 }
 

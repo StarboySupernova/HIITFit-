@@ -58,6 +58,20 @@ class HistoryStore: ObservableObject {
         //throw FileError.loadFailure
     }
     
+    func getUrl () -> URL? {
+        guard let documentsURL = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask).first else {
+        return nil }
+        return documentsURL.appendingPathComponent("history.plist") //You add the file name to the documents path. This gives you the full URL of the file to which you’ll write the history data
+    }
+    func save () throws {
+        guard let dataUrl = getUrl() else {throw FileError.saveFailure}
+        
+        var plistData: [[Any]] = []
+        for exerciseDay in exerciseDays {
+            plistData.append(([exerciseDay.id.uuidString, exerciseDay.date, exerciseDay.exercises])) //what is the significance of double parentheses?
+        }
+    }
+    
 }
 
 

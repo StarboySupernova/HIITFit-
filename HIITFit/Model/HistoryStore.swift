@@ -66,10 +66,21 @@ class HistoryStore: ObservableObject {
     func save () throws {
         guard let dataUrl = getUrl() else {throw FileError.saveFailure}
         
-        var plistData: [[Any]] = []
-        for exerciseDay in exerciseDays {
-            plistData.append(([exerciseDay.id.uuidString, exerciseDay.date, exerciseDay.exercises])) //what is the significance of double parentheses?
+        let plistData = exerciseDays.map{
+            [$0.id.uuidString, $0.date, $0.exercises]
         }
+        
+        //longer version on using the map(_:) that accepts a closure as an argument and applies that closure to each element of the array and returns a new array with the transformations applied
+        /* let plistData: [[Any]] = exerciseDays.map{ exerciseDay in
+            [exerciseDay.id.uuidString, exerciseDay.date, exerciseDay.exercises]
+        } */
+        
+        
+        //we will use map for this. It performs basically the same functionality in this context
+        /* var plistData: [[Any]] = []
+        for exerciseDay in exerciseDays {
+            plistData.append([exerciseDay.id.uuidString, exerciseDay.date, exerciseDay.exercises])
+        } */
     }
     
 }

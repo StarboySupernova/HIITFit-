@@ -26,6 +26,7 @@
 		736ED1A8271E387000D0F9EB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736ED1A7271E387000D0F9EB /* DateExtension.swift */; };
 		73BC49242724437C008620B7 /* squat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73BC49262724437C008620B7 /* squat.mp4 */; };
 		73E637152723693E0097AE04 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73E637172723693E0097AE04 /* Localizable.strings */; };
+		73E8E637273A0ADA0083AC81 /* RaisedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E8E636273A0ADA0083AC81 /* RaisedButton.swift */; };
 		73EAA9F92722264500510E12 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA9F82722264500510E12 /* SuccessView.swift */; };
 		73EAA9FB2722448E00510E12 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA9FA2722448E00510E12 /* Exercise.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		73BC492327244016008620B7 /* sn-ZW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sn-ZW"; path = "sn-ZW.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		73BC49252724437C008620B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/squat.mp4; sourceTree = "<group>"; };
 		73E637162723693E0097AE04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		73E8E636273A0ADA0083AC81 /* RaisedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaisedButton.swift; sourceTree = "<group>"; };
 		73EAA9F82722264500510E12 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		73EAA9FA2722448E00510E12 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +130,7 @@
 				7302FBF6271E14DF003BDF94 /* HistoryView.swift */,
 				73EAA9F82722264500510E12 /* SuccessView.swift */,
 				7332646027315379008F6535 /* TimerView.swift */,
+				73E8E636273A0ADA0083AC81 /* RaisedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				73616BE4270D0F0E00F77659 /* ExerciseView.swift in Sources */,
 				73EAA9FB2722448E00510E12 /* Exercise.swift in Sources */,
 				73616BD0270D01BD00F77659 /* ContentView.swift in Sources */,
+				73E8E637273A0ADA0083AC81 /* RaisedButton.swift in Sources */,
 				73616BE2270D0EEE00F77659 /* WelcomeView.swift in Sources */,
 				7305C0E72721A150000B21C3 /* ImageExtension.swift in Sources */,
 				73616BCE270D01BD00F77659 /* HIITFitApp.swift in Sources */,

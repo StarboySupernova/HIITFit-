@@ -52,6 +52,10 @@ struct HIITFitApp: App {
                                   support@supernovaonline.com
                                 """))
                 }
+            //Removed code because not all buttons will the custom style here. Was for exercise purposes
+                //.buttonStyle(raisedButtonStyle())
+            /*You tell ContentView that whenever there’s a button in the hierarchy, it should use your custom style. All the buttons in your app will use your new style with the red background. Notice that when you use a style and run, the button text color changes from the default accent color of blue to the primary color. That’s black in Light Mode and white in Dark Mode */
+                
             
         }
     }

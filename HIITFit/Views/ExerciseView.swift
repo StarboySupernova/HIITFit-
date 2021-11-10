@@ -62,9 +62,10 @@ struct ExerciseView: View {
                 
                 
                 HStack(spacing: 150){
-                    Button(NSLocalizedString ("Start", comment: "begin exercise")) {
+                    startExerciseButton
+                    /*Button(NSLocalizedString ("Start", comment: "begin exercise")) {
                         showTimer.toggle()
-                    }
+                    }*/
                     Button(NSLocalizedString("Done", comment: "mark as finished")){
                         history.addDoneExercise(Exercise.exercises[index].exerciseName)
                         timerDone = false
@@ -108,9 +109,12 @@ struct ExerciseView: View {
                     HistoryView(showHistory: $showHistory)
                 }
                     .padding(.bottom)
-                
             }
         }
+    }
+    
+    var startExerciseButton: some View {
+        RaisedButton(buttonText: NSLocalizedString("Start Exercise", comment: "begin exercise"), action: {showTimer.toggle()})
     }
 }
 

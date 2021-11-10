@@ -49,22 +49,26 @@ struct WelcomeView: View {
                         
                     
                 }
-
-                Button(action:{selectedTab = 0}){
+                /* Replaced code.Replaced by the more succint and abstract getStartedButton line
+                 Button(action:{selectedTab = 0}){
 //                    Label("Get Started", systemImage: "arrow.right.circle")
                     Text(NSLocalizedString("Get Started", comment: "invitation"))
-                        .padding(.leading)
-                    Image(systemName: "arrow.right.circle")
-                        .font(.title2)
-                        .padding()
+                        .raisedButtonTextStyle()
                 }
+                .buttonStyle(RaisedButtonStyle())
+                .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.gray, lineWidth: 2))
-
-                
+                 Replaced code */
+                getStartedButton
             }
         }
+    }
+    var getStartedButton: some View {
+        RaisedButton(buttonText: NSLocalizedString("Get Started", comment: "invitation"),
+                     action: {selectedTab = 0})
+            .padding()
     }
 }
 

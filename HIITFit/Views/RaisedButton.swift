@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct RaisedButton: View {
+    
+    let buttonText: String
+    let action: () -> Void
+    
     var body: some View {
-        Button(action: {}){
-            Text("Get Started")
-                .raisedButtonStyle()
+        Button(action: {
+            action()
+        }){
+            Text(buttonText)
+                .raisedButtonTextStyle()
         }
+        .buttonStyle(RaisedButtonStyle())
         
     }
 }
 
 extension Text {
-    func raisedButtonStyle () -> some View {
+    func raisedButtonTextStyle () -> some View {
         self
             .font(.body)
             .fontWeight(.bold)
@@ -31,7 +38,7 @@ extension Text {
     */
 
 
-struct raisedButtonStyle: ButtonStyle {
+struct RaisedButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(maxWidth: .infinity)
@@ -54,9 +61,9 @@ struct raisedButtonStyle: ButtonStyle {
 struct RaisedButton_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            RaisedButton()
+            RaisedButton(buttonText: "Get Started"){print("Hello World")}
                 .padding(20)
-                .buttonStyle(raisedButtonStyle()) //seems here that if a type has no properties but only methods,the methods are automatically called during initialization
+                .buttonStyle(RaisedButtonStyle()) //seems here that if a type has no properties but only methods,the methods are automatically called during initialization
             
         }
         .background(Color("background"))

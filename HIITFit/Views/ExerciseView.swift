@@ -102,15 +102,26 @@ struct ExerciseView: View {
                     .padding()
                 
                 
-                Button(NSLocalizedString("History", comment: "view user activity")){
+                /* Button(NSLocalizedString("History", comment: "view user activity")){
                     showHistory.toggle()
-                }
+                } */
+                historyButton
                 .sheet(isPresented: $showHistory){
                     HistoryView(showHistory: $showHistory)
                 }
                     .padding(.bottom)
             }
         }
+    }
+    
+    var historyButton: some View {
+        Button(action: {showHistory = true}, label: {
+            Text("History")
+                .fontWeight(.bold)
+                .padding([.leading, .trailing], 5)
+        })
+            .padding(.bottom, 10)
+            .buttonStyle(EmbossedButtonStyle())
     }
     
     var startExerciseButton: some View {

@@ -21,14 +21,18 @@ struct WelcomeView: View {
                             NSLocalizedString("Welcome", comment: "greeting")
                 )
                 Spacer()
-                Button(
+                /* Button(
                     NSLocalizedString("History", comment: "view user activity")){
                         showHistory.toggle()
                     }
                     .sheet(isPresented: $showHistory){
                         HistoryView(showHistory: $showHistory)
                     }
-                .padding(.bottom)
+                .padding(.bottom) */
+                historyButton
+                    .sheet(isPresented: $showHistory){
+                        HistoryView(showHistory: $showHistory)
+                    }
             }
             VStack {
                 HStack(alignment: .bottom) {
@@ -65,9 +69,22 @@ struct WelcomeView: View {
             }
         }
     }
+    
+    var historyButton: some View {
+        Button(action: {showHistory = true}, label: {
+            Text("History")
+                .fontWeight(.bold)
+                .padding([.leading, .trailing], 5)
+        })
+            .padding(.bottom, 10)
+            .buttonStyle(EmbossedButtonStyle())
+    }
+    
     var getStartedButton: some View {
-        RaisedButton(buttonText: NSLocalizedString("Get Started", comment: "invitation"),
-                     action: {selectedTab = 0})
+        RaisedButton(
+            buttonText: NSLocalizedString("Get Started", comment: "invitation"),
+            action: {selectedTab = 0
+        })
             .padding()
     }
 }

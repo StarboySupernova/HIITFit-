@@ -48,7 +48,19 @@ struct RatingsView: View {
     var body: some View {
         HStack {
             ForEach(1 ..< maximumRating + 1) { index in
-                Image(systemName: "waveform.path.ecg")
+                Button(action: {updateRating(index: index)},
+                       label: {
+                    Image(systemName: "waveform.path.ecg")
+                        .foregroundColor(index > rating ? offColor: onColor)
+                        .font(.body)
+                })
+                    .buttonStyle(EmbossedButtonStyle(buttonShape: .round))
+                    .onChange(of: ratings){ _ in
+                        convertRating()
+                    }
+                    .onAppear(perform: {convertRating()})
+                //contents of ForEach changed from Images to Buttons
+                /* Image(systemName: "waveform.path.ecg")
                     .onAppear{
                         convertRating()
                     }
@@ -58,7 +70,7 @@ struct RatingsView: View {
                     }
                     .onChange(of: ratings){ _ in
                         convertRating()
-                    }
+                    } */
                 // Here you set up a reactive method that will call convertRating() whenever ratings changes. If you were using only one window, you wouldn’t notice the effect, but multiple windows can now react to the property changing in another window
                 // previously our window was only being redrawn on change of rating State value
             }

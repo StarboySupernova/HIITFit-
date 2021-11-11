@@ -13,6 +13,31 @@ struct WelcomeView: View {
     @State private var showHistory = false
     
     var body: some View {
+        GeometryReader { geometry in
+            VStack {
+                //You embed the top VStack in GeometryReader so that you’ll be able to determine the size available for the container view
+                HeaderView(selectedTab: $selectedTab, titleText: "Welcome")
+                Spacer()
+                //container view
+                ContainerView {
+                    VStack {
+                        WelcomeView.images
+                        WelcomeView.welcomeText
+                        getStartedButton
+                        Spacer()
+                        historyButton
+                    }
+                }
+                .frame(height: geometry.size.height * 0.8)
+            }
+            .sheet(isPresented: $showHistory){
+                HistoryView(showHistory: $showHistory)
+            }
+        }
+        
+        // we did a major refactor of the code in body
+        //
+        /*
         ZStack {
             VStack {
                 HeaderView(selectedTab:
@@ -67,7 +92,7 @@ struct WelcomeView: View {
                  Replaced code */
                 getStartedButton
             }
-        }
+        } */
     }
     
     var historyButton: some View {

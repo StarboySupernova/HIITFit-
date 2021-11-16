@@ -18,4 +18,9 @@ extension HistoryStore {
                             [Exercise.exercises[1].exerciseName, Exercise.exercises[0].exerciseName])
         ]
     }
+    
+    convenience init(debugData: Bool) {
+      self.init()
+      createDevData()
+    }
 }

@@ -34,6 +34,7 @@ struct Exercise {
 }
 
 extension Exercise {
+    //using ExerciseEnum.squat.description is discoraged from CustomStringConvertible documentation
     static let exercises = [
         Exercise(exerciseName: String (describing: ExerciseEnum.squat), videoName: "squat"),
         Exercise(exerciseName: String (describing: ExerciseEnum.stepUp), videoName: "step-up"),

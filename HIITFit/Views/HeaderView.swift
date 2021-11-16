@@ -18,11 +18,20 @@ struct HeaderView: View {
                 .font(.largeTitle)
             HStack {
                 ForEach (0 ..< Exercise.exercises.count) { index in
-                    let fill = index == selectedTab ? ".fill" : ""
-                    Image(systemName: "\(index + 1).circle\(fill)")
-                        .onTapGesture {
-                            selectedTab = index
-                        }
+                    ZStack {
+                     Circle()
+                       .frame(width: 32, height: 32)
+                       .foregroundColor(.black)
+                       .opacity(index == selectedTab ? 0.5 : 0)
+                     Circle()
+                       .frame(width: 16, height: 16)
+                       .foregroundColor(.white)
+                   }
+                    //let fill = index == selectedTab ? ".fill" : ""
+                    //Image(systemName: "\(index + 1).circle\(fill)")
+                    .onTapGesture {
+                        selectedTab = index
+                    }
                 }
                 
             //Obsoleted in favour of using ForEach to calculate which image to use

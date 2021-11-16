@@ -30,6 +30,10 @@ struct WelcomeView: View {
                 }
                 .frame(height: geometry.size.height * 0.8)
             }
+            /*
+            //hypothesis: modal sheet is on history button because it is the last view in ContainerView.
+            //updated hypothesis: modal sheet is outside a containing view, hence it is on all buttons in that view. But only history button changes showHistory property so it is the only one capable of bringing up history view
+            */
             .sheet(isPresented: $showHistory){
                 HistoryView(showHistory: $showHistory)
             }

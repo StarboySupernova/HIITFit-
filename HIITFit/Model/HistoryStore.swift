@@ -44,8 +44,8 @@ class HistoryStore: ObservableObject {
         //this code does not cope with the possibility of the array being nil, so we need to alter it to prevent runtime errors
         let today = Date()
         //if today.isSameDay(as: exerciseDays[0].date){
-        if let firstDate = exerciseDays.first?.date,today.isSameDay(as: exerciseDays[0].date) {
-            print("Adding \(exerciseName)")
+        if let firstDate = exerciseDays.first?.date, today.isSameDay(as: exerciseDays[0].date) {
+            print("Adding \(exerciseName) and \(firstDate)")
             exerciseDays[0].exercises.append(exerciseName)
         } else {
             exerciseDays.insert(ExerciseDay(date: today, exercises: [exerciseName]), at: 0)
@@ -81,6 +81,7 @@ class HistoryStore: ObservableObject {
             let exerciseDays = convertedPlistData.map {
                 ExerciseDay(date: $0[1] as? Date ?? Date(), exercises: $0[2] as? [String] ?? [])
             }
+            print(exerciseDays)
         } catch {
             throw FileError.loadFailure
         }
